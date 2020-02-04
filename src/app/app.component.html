@@ -1,0 +1,149 @@
+<nz-layout class="main-container" fxLayout="row">
+
+  <nz-layout>
+    <nz-sider nzWidth="200px" nzTheme="light">
+      <div class="top-menu" fxLayoutAlign="center center">
+        <img src="../assets/images/logo.png">
+        <div>AstriaLearning</div>
+        <i nz-icon nzType="more" nzRotate="90" nzTheme="outline"></i>
+      </div>
+      <ul nz-menu nzMode="inline" class="sider-menu">
+        <li class="dashboard" nz-menu-item>
+          <i nz-icon nzType="menu-fold"></i>Dashboard
+        </li>
+        <li nz-submenu nzOpen nzIcon="icons:graduation-cap" nzTitle="Academic">
+          <ul>
+            <li nz-menu-item nzSelected>Application</li>
+            <li nz-menu-item>Registration</li>
+            <li nz-menu-item>Gradebook</li>
+          </ul>
+        </li>
+        <li nz-menu-item><i nz-icon nzType="icons:hands-helping"></i>Collaboration</li>
+        <li nz-menu-item><i nz-icon nzType="icons:chart-bar"></i>Data and reports</li>
+        <li nz-menu-item><i nz-icon nzType="icons:user-shield"></i>Administration</li>
+        <li nz-menu-item><i nz-icon nzType="icons:book"></i>Astria library</li>
+        <li nz-menu-item><i nz-icon nzType="icons:cogs"></i>Settings</li>
+      </ul>
+    </nz-sider>
+  </nz-layout>
+
+  <nz-layout class="inner-layout">
+    <nz-content>
+      <div class="main-content" fxLayoutAlign="space-between">
+        <i nz-icon nzType="icons:search"></i>
+        <div>Good afternoon, Ralph</div>
+        <div>
+          <i nz-icon nzType="icons:clock"></i>
+          <i class="main-content-icon" nz-icon nzType="icons:calendar-alt"></i>
+        </div>
+      </div>
+      <nz-divider></nz-divider>
+      <div class="alert">
+        <div class="below-alert" fxLayoutAlign="space-between">
+          The payment systems are currently undergoing maintanance. Please try again in 2 hours
+          <i nz-icon nzType="icons:times"></i>
+        </div>
+        <div class="carts-container" fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="12px"
+          fxLayoutAlign="space-between center">
+          <div [ngStyle.lt-lg]="{width:'250px'}" fxLayoutAlign="center" fxFlex="25" fxFlex.lt-lg="110px" class="carts">
+            <div class="carts-content">
+              <i nz-icon nzType="icons:graduation-cap"></i>
+            </div>
+            <div>
+              <p>12.345</p>
+              <p>Students</p>
+            </div>
+          </div>
+          <div [ngStyle.lt-lg]="{width:'250px'}" fxLayoutAlign="center" fxFlex="25" fxFlex.lt-lg="110px" class="carts">
+            <div class="carts-content">
+              <i nz-icon nzType="icons:user-tie"></i>
+            </div>
+            <div>
+              <p>12.345</p>
+              <p>Employees</p>
+            </div>
+          </div>
+          <div [ngStyle.lt-lg]="{width:'250px'}" fxLayoutAlign="center" fxFlex="25" fxFlex.lt-lg="110px" class="carts">
+            <div class="carts-content">
+              <i nz-icon nzType="icons:file-invoice-dollar"></i>
+            </div>
+            <div>
+              <p>12.345</p>
+              <p>Invoices</p>
+            </div>
+          </div>
+          <div [ngStyle.lt-lg]="{width:'250px'}" fxLayoutAlign="center" fxFlex="25" fxFlex.lt-lg="110px" class="carts">
+            <div class="carts-content">
+              <i nz-icon nzType="icons:mobile-alt"></i>
+            </div>
+            <div>
+              <p>12.345</p>
+              <p>Sms Sent</p>
+            </div>
+          </div>
+        </div>
+        <div class="calender-graph" fxLayoutGap="20px" fxLayout="row" fxLayoutAlign="space-between">
+          <div fxFlex="50">
+            <div class="c-g-bottom">Calender & Activities</div>
+            <nz-divider></nz-divider>
+            <div
+              [ngStyle]="{border: '1px solid #d9d9d9', borderRadius: '4px', 'background-color':'white','margin-top': '20px'}">
+              <nz-calendar [nzFullscreen]="false" (nzSelectChange)="onValueChange($event)"
+                (nzPanelChange)="onPanelChange($event)">
+              </nz-calendar>
+            </div>
+          </div>
+          <div fxFlex="50">
+            <div class="c-g-bottom">Sessions recorded</div>
+            <nz-divider></nz-divider>
+
+            <div>
+              <apx-chart [fill]="chartOptions.fill" [series]="chartOptions.series" [chart]="chartOptions.chart"
+                [xaxis]="chartOptions.xaxis" [stroke]="chartOptions.stroke"></apx-chart>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </nz-content>
+  </nz-layout>
+
+  <nz-layout class="main">
+    <nz-sider nzWidth="200px" nzTheme="light">
+      <div class="top-menu" fxLayoutAlign="space-between center">
+        <div>Profile</div>
+        <div>
+          <i nz-icon nzType="icons:envelope"></i>
+          <i nz-icon nzType="icons:bell" class="main-content-icon"></i>
+        </div>
+      </div>
+      <div class="right-siders" fxLayoutAlign="center center">
+        <img src="../assets/images/man.jpg">
+      </div>
+      <div fxLayoutAlign="center" class="below-img">
+        <button nz-button nz-dropdown [nzDropdownMenu]="menu4">
+          <b>Ralph Otowo</b>
+          <i nz-icon nzType="down"></i>
+          <br>
+          <p>shamrozshami812@gmail.com</p>
+        </button>
+        <nz-dropdown-menu #menu4="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item>menu4 1st menu item</li>
+            <li nz-menu-item>menu4 2nd menu item</li>
+            <li nz-menu-item>menu4 3rd menu item</li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
+      <ul nz-menu nzMode="inline" class="sider-menu">
+        <li nz-menu-group class="right-sider-icons-heading">Actions</li>
+        <nz-divider></nz-divider>
+        <li nz-menu-item><i class="right-sider-icons" nz-icon nzType="icons:hands-helping"></i>New Announcement</li>
+        <li nz-menu-item><i class="right-sider-icons" nz-icon nzType="icons:hands-helping"></i>Send Sms</li>
+        <li nz-menu-item><i class="right-sider-icons" nz-icon nzType="icons:hands-helping"></i>View Reports</li>
+        <li nz-menu-item><i class="right-sider-icons" nz-icon nzType="icons:hands-helping"></i>Human Resources</li>
+        <li nz-menu-item><i class="right-sider-icons" nz-icon nzType="icons:hands-helping"></i>Admit Student</li>
+      </ul>
+    </nz-sider>
+  </nz-layout>
+</nz-layout>
